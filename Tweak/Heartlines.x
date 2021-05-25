@@ -791,8 +791,9 @@ SBFLockScreenDateView* timeDateView = nil;
     // get lockscreen wallpaper
     NSData* lockWallpaperData = [NSData dataWithContentsOfFile:@"/var/mobile/Library/SpringBoard/LockBackground.cpbitmap"];
     CFDataRef lockWallpaperDataRef = (__bridge CFDataRef)lockWallpaperData;
-    NSArray* imageArray = (__bridge NSArray *)CPBitmapCreateImagesFromData(lockWallpaperDataRef, NULL, 1, NULL);
-    UIImage* wallpaper = [UIImage imageWithCGImage:(CGImageRef)imageArray[0]];
+    CFArrayRef imageArray = CPBitmapCreateImagesFromData(lockWallpaperDataRef, NULL, 1, NULL);
+    UIImage* wallpaper = [UIImage imageWithCGImage:(CGImageRef)CFArrayGetValueAtIndex(imageArray, 0)];
+    CFRelease(imageArray);
 
     // get lockscreen wallpaper based colors
     backgroundWallpaperColor = [libKitten backgroundColor:wallpaper];
