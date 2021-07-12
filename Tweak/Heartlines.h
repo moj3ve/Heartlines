@@ -3,15 +3,14 @@
 #import <MediaRemote/MediaRemote.h>
 #import <Kitten/libKitten.h>
 #import "libpddokdo.h"
-#import "SparkColourPickerUtils.h"
+#import "GcUniversal/GcColorPickerUtils.h"
 #import "HLSLocalization.h"
 #import <dlfcn.h>
 #import <Cephei/HBPreferences.h>
 
 HBPreferences* preferences = nil;
-NSDictionary* preferencesColorDictionary = nil;
-
 BOOL enabled = NO;
+
 extern CFArrayRef CPBitmapCreateImagesFromData(CFDataRef cpbitmap, void *, int, void *);
 
 BOOL firstTimeLoaded = NO;

@@ -151,7 +151,7 @@ SBFLockScreenDateView* timeDateView = nil;
 
     // load sf pro text regular font if not using a custom chosen one
     if (!useCustomFontSwitch) {
-        NSData* inData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/HeartlinesPrefs.bundle/SF-Pro-Text-Regular.otf"]];
+        NSData* inData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/HeartlinesPreferences.bundle/fonts/SF-Pro-Text-Regular.otf"]];
         CFErrorRef error;
         CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)inData);
         CGFontRef font = CGFontCreateWithDataProvider(provider);
@@ -163,7 +163,7 @@ SBFLockScreenDateView* timeDateView = nil;
         CFRelease(provider);
 
         // load sf pro text semibold font
-        NSData* inData2 = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/HeartlinesPrefs.bundle/SF-Pro-Text-Semibold.otf"]];
+        NSData* inData2 = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/HeartlinesPreferences.bundle/fonts/SF-Pro-Text-Semibold.otf"]];
         CFErrorRef error2;
         CGDataProviderRef provider2 = CGDataProviderCreateWithCFData((CFDataRef)inData2);
         CGFontRef font2 = CGFontCreateWithDataProvider(provider2);
@@ -1290,15 +1290,12 @@ SBFLockScreenDateView* timeDateView = nil;
 
 %end
 
-%end
-
-%group HeartlinesData
-
 %hook SBMediaController
 
 - (void)setNowPlayingInfo:(id)arg1 { // get artwork colors
 
     %orig;
+    if (!artworkBasedColorsSwitch) return;
 
     MRMediaRemoteGetNowPlayingInfo(dispatch_get_main_queue(), ^(CFDictionaryRef information) {
         if (information) {
@@ -1453,6 +1450,7 @@ SBFLockScreenDateView* timeDateView = nil;
 
     %orig;
 
+    if (!artworkBasedColorsSwitch) return;
     [[%c(SBMediaController) sharedInstance] setNowPlayingInfo:0];
     
 }
@@ -1464,7 +1462,6 @@ SBFLockScreenDateView* timeDateView = nil;
 %ctor {
 
 	preferences = [[HBPreferences alloc] initWithIdentifier:@"love.litten.heartlinespreferences"];
-    preferencesColorDictionary = [NSDictionary dictionaryWithContentsOfFile: @"/var/mobile/Library/Preferences/love.litten.heartlines.colorspreferences.plist"];
 
 	[preferences registerBool:&enabled default:nil forKey:@"Enabled"];
     if (!enabled) return;
@@ -1531,6 +1528,5 @@ SBFLockScreenDateView* timeDateView = nil;
 
     if (hideUntilAuthenticatedSwitch && invisibleInkEffectSwitch) dlopen("/System/Library/PrivateFrameworks/ChatKit.framework/ChatKit", RTLD_NOW);
 	%init(Heartlines);
-	if (artworkBasedColorsSwitch) %init(HeartlinesData);
 
 }

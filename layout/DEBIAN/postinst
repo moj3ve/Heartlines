@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo ""
 echo "               .-.  .-.         "
 echo "              (   \/   )        "
@@ -12,5 +14,5 @@ echo "    \    /    \/    \  /        "
 echo "     \  /            \/         "
 echo "      \/                        "
 echo ""
-echo "Thank You For Installing Heartlines 1.4.5 🤗"
+echo "Thank You For Installing Heartlines 1.4.6 🤗"
 echo ""

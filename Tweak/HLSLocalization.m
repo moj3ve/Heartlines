@@ -1,5 +1,5 @@
 #import "HLSLocalization.h"
-#define kBundlePath @"/Library/PreferenceBundles/HeartlinesPrefs.bundle/"
+#define kBundlePath @"/Library/PreferenceBundles/HeartlinesPreferences.bundle/localization"
 
 @interface HLSLocalization ()
 @end
