@@ -207,7 +207,7 @@
 			<key>icon</key>
 			<string>featured/Lune.png</string>
 			<key>url</key>
-			<string>https://repo.litten.love/depictions/lne/</string>
+			<string>https://repo.litten.love/depictions/Lune/</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -219,7 +219,7 @@
 			<key>icon</key>
 			<string>featured/Violet.png</string>
 			<key>url</key>
-			<string>https://repo.litten.love/depictions/vio/</string>
+			<string>https://repo.litten.love/depictions/Violet/</string>
 		</dict>
 
 		<dict>
