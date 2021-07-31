@@ -1,4 +1,4 @@
-#import <CoreText/CoreText.h>
+#import <UIKit/UIKit.h>
 #import <EventKit/EventKit.h>
 #import <MediaRemote/MediaRemote.h>
 #import <Kitten/libKitten.h>
@@ -132,7 +132,7 @@ BOOL magsafeCompatibilitySwitch = NO;
 @property(nonatomic, retain)UILabel* heartlinesUpNextEventLabel;
 @property(nonatomic, retain)UIView* heartlinesInvisibleInk;
 - (void)updateHeartlinesTimeAndDate;
-- (void)updateHeartlinesUpNext:(NSNotification *)notification;
+- (void)updateHeartlinesUpNext;
 @end
 
 @interface CSCoverSheetViewController : UIViewController

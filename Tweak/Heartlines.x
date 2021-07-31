@@ -130,9 +130,8 @@ SBFLockScreenDateView* timeDateView = nil;
 - (id)initWithFrame:(CGRect)frame { // add notification observer
 
     id orig = %orig;
-    timeDateView = self;
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHeartlinesUpNext:) name:@"heartlinesUpdateUpNext" object:nil];
+    timeDateView = self;
 
     return orig;
     
@@ -142,38 +141,12 @@ SBFLockScreenDateView* timeDateView = nil;
 
 	%orig;
 
+    if ([self heartlinesTimeLabel]) return;
+
     // remove original time label
     SBUILegibilityLabel* originalheartlinesTimeLabel = [self valueForKey:@"timeLabel"];
     [originalheartlinesTimeLabel removeFromSuperview];
 
-    if (firstTimeLoaded) return;
-    firstTimeLoaded = YES;
-
-    // load sf pro text regular font if not using a custom chosen one
-    if (!useCustomFontSwitch) {
-        NSData* inData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/HeartlinesPreferences.bundle/fonts/SF-Pro-Text-Regular.otf"]];
-        CFErrorRef error;
-        CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)inData);
-        CGFontRef font = CGFontCreateWithDataProvider(provider);
-        if (!CTFontManagerRegisterGraphicsFont(font, &error)) {
-            CFStringRef errorDescription = CFErrorCopyDescription(error);
-            CFRelease(errorDescription);
-        }
-        CFRelease(font);
-        CFRelease(provider);
-
-        // load sf pro text semibold font
-        NSData* inData2 = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Library/PreferenceBundles/HeartlinesPreferences.bundle/fonts/SF-Pro-Text-Semibold.otf"]];
-        CFErrorRef error2;
-        CGDataProviderRef provider2 = CGDataProviderCreateWithCFData((CFDataRef)inData2);
-        CGFontRef font2 = CGFontCreateWithDataProvider(provider2);
-        if (!CTFontManagerRegisterGraphicsFont(font2, &error2)) {
-            CFStringRef errorDescription2 = CFErrorCopyDescription(error2);
-            CFRelease(errorDescription2);
-        }
-        CFRelease(font2);
-        CFRelease(provider2);
-    }
 
     if ([styleValue intValue] == 0) {
         // up next label
@@ -182,9 +155,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
             if (!useCustomFontSwitch){
                 if (!useCustomUpNextFontSizeSwitch) {
-                    [[self heartlinesUpNextLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:19]];
+                    [[self heartlinesUpNextLabel] setFont:[UIFont systemFontOfSize:19 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesUpNextLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customUpNextFontSizeValue intValue]]];
+                    [[self heartlinesUpNextLabel] setFont:[UIFont systemFontOfSize:[customUpNextFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomUpNextFontSizeSwitch) {
@@ -222,9 +195,9 @@ SBFLockScreenDateView* timeDateView = nil;
 
             if (!useCustomFontSwitch){
                 if (!useCustomUpNextEventFontSizeSwitch) {
-                    [[self heartlinesUpNextEventLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:15]];
+                    [[self heartlinesUpNextEventLabel] setFont:[UIFont systemFontOfSize:15 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesUpNextEventLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customUpNextEventFontSizeValue intValue]]];
+                    [[self heartlinesUpNextEventLabel] setFont:[UIFont systemFontOfSize:[customUpNextEventFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomUpNextEventFontSizeSwitch) {
@@ -281,9 +254,9 @@ SBFLockScreenDateView* timeDateView = nil;
 
         if (!useCustomFontSwitch){
             if (!useCustomTimeFontSizeSwitch) {
-                [[self heartlinesTimeLabel] setFont:[UIFont fontWithName:@"SFProText-Regular" size:61]];
+                [[self heartlinesTimeLabel] setFont:[UIFont systemFontOfSize:61 weight:UIFontWeightRegular]];
             } else {
-                [[self heartlinesTimeLabel] setFont:[UIFont fontWithName:@"SFProText-Regular" size:[customTimeFontSizeValue intValue]]];
+                [[self heartlinesTimeLabel] setFont:[UIFont systemFontOfSize:[customTimeFontSizeValue intValue] weight:UIFontWeightRegular]];
             }
         } else {
             if (!useCustomTimeFontSizeSwitch) {
@@ -321,9 +294,9 @@ SBFLockScreenDateView* timeDateView = nil;
 
         if (!useCustomFontSwitch){
             if (!useCustomDateFontSizeSwitch) {
-                [[self heartlinesDateLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:17]];
+                [[self heartlinesDateLabel] setFont:[UIFont systemFontOfSize:17 weight:UIFontWeightSemibold]];
             } else {
-                [[self heartlinesDateLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customDateFontSizeValue intValue]]];
+                [[self heartlinesDateLabel] setFont:[UIFont systemFontOfSize:[customDateFontSizeValue intValue] weight:UIFontWeightSemibold]];
             }
         } else {
             if (!useCustomDateFontSizeSwitch) {
@@ -363,9 +336,9 @@ SBFLockScreenDateView* timeDateView = nil;
 
             if (!useCustomFontSwitch){
                 if (!useCustomWeatherReportFontSizeSwitch) {
-                    [[self heartlinesWeatherReportLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:14]];
+                    [[self heartlinesWeatherReportLabel] setFont:[UIFont systemFontOfSize:14 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesWeatherReportLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customWeatherReportFontSizeValue intValue]]];
+                    [[self heartlinesWeatherReportLabel] setFont:[UIFont systemFontOfSize:[customWeatherReportFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomWeatherReportFontSizeSwitch) {
@@ -404,9 +377,9 @@ SBFLockScreenDateView* timeDateView = nil;
 
             if (!useCustomFontSwitch){
                 if (!useCustomWeatherConditionFontSizeSwitch) {
-                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:14]];
+                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont systemFontOfSize:14 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customWeatherConditionFontSizeValue intValue]]];
+                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont systemFontOfSize:[customWeatherConditionFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomWeatherConditionFontSizeSwitch) {
@@ -442,9 +415,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
             if (!useCustomFontSwitch){
                 if (!useCustomWeatherConditionFontSizeSwitch) {
-                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:14]];
+                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont systemFontOfSize:14 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customWeatherConditionFontSizeValue intValue]]];
+                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont systemFontOfSize:[customWeatherConditionFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomWeatherConditionFontSizeSwitch) {
@@ -481,9 +454,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
         if (!useCustomFontSwitch){
             if (!useCustomDateFontSizeSwitch) {
-                [[self heartlinesDateLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:17]];
+                [[self heartlinesDateLabel] setFont:[UIFont systemFontOfSize:17 weight:UIFontWeightSemibold]];
             } else {
-                [[self heartlinesDateLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customDateFontSizeValue intValue]]];
+                [[self heartlinesDateLabel] setFont:[UIFont systemFontOfSize:[customDateFontSizeValue intValue] weight:UIFontWeightSemibold]];
             }
         } else {
             if (!useCustomDateFontSizeSwitch) {
@@ -523,9 +496,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
         if (!useCustomFontSwitch){
             if (!useCustomTimeFontSizeSwitch) {
-                [[self heartlinesTimeLabel] setFont:[UIFont fontWithName:@"SFProText-Regular" size:61]];
+                [[self heartlinesTimeLabel] setFont:[UIFont systemFontOfSize:61 weight:UIFontWeightRegular]];
             } else {
-                [[self heartlinesTimeLabel] setFont:[UIFont fontWithName:@"SFProText-Regular" size:[customTimeFontSizeValue intValue]]];
+                [[self heartlinesTimeLabel] setFont:[UIFont systemFontOfSize:[customTimeFontSizeValue intValue] weight:UIFontWeightRegular]];
             }
         } else {
             if (!useCustomTimeFontSizeSwitch) {
@@ -563,9 +536,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
             if (!useCustomFontSwitch){
                 if (!useCustomUpNextFontSizeSwitch) {
-                    [[self heartlinesUpNextLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:19]];
+                    [[self heartlinesUpNextLabel] setFont:[UIFont systemFontOfSize:19 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesUpNextLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customUpNextFontSizeValue intValue]]];
+                    [[self heartlinesUpNextLabel] setFont:[UIFont systemFontOfSize:[customUpNextFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomUpNextFontSizeSwitch) {
@@ -602,9 +575,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
             if (!useCustomFontSwitch){
                 if (!useCustomUpNextEventFontSizeSwitch) {
-                    [[self heartlinesUpNextEventLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:15]];
+                    [[self heartlinesUpNextEventLabel] setFont:[UIFont systemFontOfSize:15 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesUpNextEventLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customUpNextEventFontSizeValue intValue]]];
+                    [[self heartlinesUpNextEventLabel] setFont:[UIFont systemFontOfSize:[customUpNextEventFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomUpNextEventFontSizeSwitch) {
@@ -655,9 +628,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
         if (!useCustomFontSwitch){
             if (!useCustomTimeFontSizeSwitch) {
-                [[self heartlinesTimeLabel] setFont:[UIFont fontWithName:@"SFProText-Regular" size:61]];
+                [[self heartlinesTimeLabel] setFont:[UIFont systemFontOfSize:61 weight:UIFontWeightRegular]];
             } else {
-                [[self heartlinesTimeLabel] setFont:[UIFont fontWithName:@"SFProText-Regular" size:[customTimeFontSizeValue intValue]]];
+                [[self heartlinesTimeLabel] setFont:[UIFont systemFontOfSize:[customTimeFontSizeValue intValue] weight:UIFontWeightRegular]];
             }
         } else {
             if (!useCustomTimeFontSizeSwitch) {
@@ -689,9 +662,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
         if (!useCustomFontSwitch){
             if (!useCustomDateFontSizeSwitch) {
-                [[self heartlinesDateLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:17]];
+                [[self heartlinesDateLabel] setFont:[UIFont systemFontOfSize:17 weight:UIFontWeightSemibold]];
             } else {
-                [[self heartlinesDateLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customDateFontSizeValue intValue]]];
+                [[self heartlinesDateLabel] setFont:[UIFont systemFontOfSize:[customDateFontSizeValue intValue] weight:UIFontWeightSemibold]];
             }
         } else {
             if (!useCustomDateFontSizeSwitch) {
@@ -726,9 +699,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
             if (!useCustomFontSwitch){
                 if (!useCustomWeatherReportFontSizeSwitch) {
-                    [[self heartlinesWeatherReportLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:14]];
+                    [[self heartlinesWeatherReportLabel] setFont:[UIFont systemFontOfSize:14 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesWeatherReportLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customWeatherReportFontSizeValue intValue]]];
+                    [[self heartlinesWeatherReportLabel] setFont:[UIFont systemFontOfSize:[customWeatherReportFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomWeatherReportFontSizeSwitch) {
@@ -761,9 +734,9 @@ SBFLockScreenDateView* timeDateView = nil;
             
             if (!useCustomFontSwitch){
                 if (!useCustomWeatherConditionFontSizeSwitch) {
-                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:14]];
+                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont systemFontOfSize:14 weight:UIFontWeightSemibold]];
                 } else {
-                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont fontWithName:@"SFProText-Semibold" size:[customWeatherConditionFontSizeValue intValue]]];
+                    [[self heartlinesWeatherConditionLabel] setFont:[UIFont systemFontOfSize:[customWeatherConditionFontSizeValue intValue] weight:UIFontWeightSemibold]];
                 }
             } else {
                 if (!useCustomWeatherConditionFontSizeSwitch) {
@@ -905,7 +878,7 @@ SBFLockScreenDateView* timeDateView = nil;
 }
 
 %new
-- (void)updateHeartlinesUpNext:(NSNotification *)notification { // update up next
+- (void)updateHeartlinesUpNext { // update up next
 
     EKEventStore* store = [EKEventStore new];
     NSCalendar* calendar = [NSCalendar currentCalendar];
@@ -988,7 +961,7 @@ SBFLockScreenDateView* timeDateView = nil;
 	%orig;
 
     if (showWeatherSwitch) [[PDDokdo sharedInstance] refreshWeatherData];
-    if (showUpNextSwitch && [styleValue intValue] != 2) [[NSNotificationCenter defaultCenter] postNotificationName:@"heartlinesUpdateUpNext" object:nil];
+    if (showUpNextSwitch && [styleValue intValue] != 2) [timeDateView updateHeartlinesUpNext];
 	[self requestHeartlinesTimeAndDateUpdate];
 
 	if (!timeAndDateTimer) timeAndDateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(requestHeartlinesTimeAndDateUpdate) userInfo:nil repeats:YES];
@@ -1037,7 +1010,7 @@ SBFLockScreenDateView* timeDateView = nil;
     if (![[%c(SBLockScreenManager) sharedInstance] isLockScreenVisible] || isScreenOn) return; // this method gets called not only when the screen gets turned on, so i verify that it was turned on by checking if the lock screen is visible
     [self requestHeartlinesTimeAndDateUpdate];
     if (showWeatherSwitch) [[PDDokdo sharedInstance] refreshWeatherData];
-    if (showUpNextSwitch && [styleValue intValue] != 2) [[NSNotificationCenter defaultCenter] postNotificationName:@"heartlinesUpdateUpNext" object:nil];
+    if (showUpNextSwitch && [styleValue intValue] != 2) [timeDateView updateHeartlinesUpNext];
 	if (!timeAndDateTimer) timeAndDateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(requestHeartlinesTimeAndDateUpdate) userInfo:nil repeats:YES];
     isScreenOn = YES;
 
