@@ -13,11 +13,12 @@ BOOL enabled = NO;
 
 extern CFArrayRef CPBitmapCreateImagesFromData(CFDataRef cpbitmap, void *, int, void *);
 
+BOOL isScreenOn = YES;
 BOOL firstTimeLoaded = NO;
 BOOL isLocked = NO;
 BOOL justPluggedIn = NO;
 BOOL isTimerRunning = NO;
-NSTimer* timer = nil;
+NSTimer* timeAndDateTimer = nil;
 UIColor* backgroundWallpaperColor = nil;
 UIColor* primaryWallpaperColor = nil;
 UIColor* secondaryWallpaperColor = nil;
@@ -43,6 +44,8 @@ BOOL smallerFaceIDLockSwitch = YES;
 BOOL useCustomFontSwitch = NO;
 NSString* timeFormatValue = @"HH:mm";
 NSString* dateFormatValue = @"EEEE d MMMM";
+BOOL useCustomDateLocaleSwitch = NO;
+NSString* customDateLocaleValue = @"";
 BOOL useCustomUpNextFontSizeSwitch = NO;
 NSString* customUpNextFontSizeValue = @"19.0";
 BOOL useCustomUpNextEventFontSizeSwitch = NO;
@@ -121,22 +124,23 @@ BOOL magsafeCompatibilitySwitch = NO;
 @end
 
 @interface SBFLockScreenDateView : UIView
-@property(nonatomic, retain)UILabel* weatherReportLabel;
-@property(nonatomic, retain)UILabel* weatherConditionLabel;
-@property(nonatomic, retain)UILabel* timeLabel;
-@property(nonatomic, retain)UILabel* dateLabel;
-@property(nonatomic, retain)UILabel* upNextLabel;
-@property(nonatomic, retain)UILabel* upNextEventLabel;
-@property(nonatomic, retain)UIView* invisibleInk;
+@property(nonatomic, retain)UILabel* heartlinesWeatherReportLabel;
+@property(nonatomic, retain)UILabel* heartlinesWeatherConditionLabel;
+@property(nonatomic, retain)UILabel* heartlinesTimeLabel;
+@property(nonatomic, retain)UILabel* heartlinesDateLabel;
+@property(nonatomic, retain)UILabel* heartlinesUpNextLabel;
+@property(nonatomic, retain)UILabel* heartlinesUpNextEventLabel;
+@property(nonatomic, retain)UIView* heartlinesInvisibleInk;
+- (void)updateHeartlinesTimeAndDate;
 - (void)updateHeartlinesUpNext:(NSNotification *)notification;
 @end
 
 @interface CSCoverSheetViewController : UIViewController
-- (void)updateHeartlines;
+- (void)requestHeartlinesTimeAndDateUpdate;
 @end
 
 @interface SBBacklightController : NSObject
-- (void)updateHeartlines;
+- (void)requestHeartlinesTimeAndDateUpdate;
 @end
 
 @interface SBLockScreenManager : NSObject
