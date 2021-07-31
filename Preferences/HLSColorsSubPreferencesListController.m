@@ -1,6 +1,6 @@
-#import "HLSContributorsSubPreferencesListController.h"
+#import "HLSColorsSubPreferencesListController.h"
 
-@implementation HLSContributorsSubPreferencesListController
+@implementation HLSColorsSubPreferencesListController
 
 - (void)viewDidLoad {
 

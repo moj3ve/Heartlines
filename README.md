@@ -6,7 +6,7 @@ I know there's trembling in your heartlines
 2. Install Heartlines
 
 ## Compiling
-  - Depends on libKitten, libPDDokdo and sparkcolourpicker
+  - Depends on libKitten, libPDDokdo and libGCUniversal
   - You may want to edit the `Makefiles` to suit your theos installation
 
 ## License

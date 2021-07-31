@@ -56,7 +56,7 @@ SBFLockScreenDateView* timeDateView = nil;
     else if ([faceIDLockColorValue intValue] == 2)
         %orig(secondaryWallpaperColor);
     else if ([faceIDLockColorValue intValue] == 3)
-        %orig([SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customFaceIDLockColor"] withFallback:@"#FFFFFF"]);
+        %orig([GcColorPickerUtils colorWithHex:customFaceIDLockColorValue]);
     else
         %orig;
 
@@ -808,7 +808,7 @@ SBFLockScreenDateView* timeDateView = nil;
     else if ([faceIDLockColorValue intValue] == 2)
         [faceIDLock setContentColor:secondaryWallpaperColor];
     else if ([faceIDLockColorValue intValue] == 3)
-        [faceIDLock setContentColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customFaceIDLockColor"] withFallback:@"#FFFFFF"]];
+        [faceIDLock setContentColor:[GcColorPickerUtils colorWithHex:customFaceIDLockColorValue]];
 
     if (showUpNextSwitch) {
         if ([upNextColorValue intValue] == 0)
@@ -818,7 +818,7 @@ SBFLockScreenDateView* timeDateView = nil;
         else if ([upNextColorValue intValue] == 2)
             [[self upNextLabel] setTextColor:secondaryWallpaperColor];
         else if ([upNextColorValue intValue] == 3)
-            [[self upNextLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customUpNextColor"] withFallback:@"#FFFFFF"]];
+            [[self upNextLabel] setTextColor:[GcColorPickerUtils colorWithHex:customUpNextColorValue]];
 
         if ([upNextEventColorValue intValue] == 0)
             [[self upNextEventLabel] setTextColor:backgroundWallpaperColor];
@@ -827,7 +827,7 @@ SBFLockScreenDateView* timeDateView = nil;
         else if ([upNextEventColorValue intValue] == 2)
             [[self upNextEventLabel] setTextColor:secondaryWallpaperColor];
         else if ([upNextEventColorValue intValue] == 3)
-            [[self upNextEventLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customUpNextEventColor"] withFallback:@"#FFFFFF"]];
+            [[self upNextEventLabel] setTextColor:[GcColorPickerUtils colorWithHex:customUpNextEventColorValue]];
     }
 
     if ([timeColorValue intValue] == 0)
@@ -837,7 +837,7 @@ SBFLockScreenDateView* timeDateView = nil;
     else if ([timeColorValue intValue] == 2)
         [[self timeLabel] setTextColor:secondaryWallpaperColor];
     else if ([timeColorValue intValue] == 3)
-        [[self timeLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customTimeColor"] withFallback:@"#FFFFFF"]];
+        [[self timeLabel] setTextColor:[GcColorPickerUtils colorWithHex:customTimeColorValue]];
 
     if ([dateColorValue intValue] == 0)
         [[self dateLabel] setTextColor:backgroundWallpaperColor];
@@ -846,7 +846,7 @@ SBFLockScreenDateView* timeDateView = nil;
     else if ([dateColorValue intValue] == 2)
         [[self dateLabel] setTextColor:secondaryWallpaperColor];
     else if ([dateColorValue intValue] == 3)
-        [[self dateLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customDateColor"] withFallback:@"#FFFFFF"]];
+        [[self dateLabel] setTextColor:[GcColorPickerUtils colorWithHex:customDateColorValue]];
 
     if (showWeatherSwitch) {
         if ([weatherReportColorValue intValue] == 0)
@@ -856,7 +856,7 @@ SBFLockScreenDateView* timeDateView = nil;
         else if ([weatherReportColorValue intValue] == 2)
             [[self weatherReportLabel] setTextColor:secondaryWallpaperColor];
         else if ([weatherReportColorValue intValue] == 3)
-            [[self weatherReportLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customWeatherReportColor"] withFallback:@"#FFFFFF"]];
+            [[self weatherReportLabel] setTextColor:[GcColorPickerUtils colorWithHex:customWeatherReportColorValue]];
 
         if ([weatherConditionColorValue intValue] == 0)
             [[self weatherConditionLabel] setTextColor:backgroundWallpaperColor];
@@ -865,7 +865,7 @@ SBFLockScreenDateView* timeDateView = nil;
         else if ([weatherConditionColorValue intValue] == 2)
             [[self weatherConditionLabel] setTextColor:secondaryWallpaperColor];
         else if ([weatherConditionColorValue intValue] == 3)
-            [[self weatherConditionLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customWeatherConditionColor"] withFallback:@"#FFFFFF"]];
+            [[self weatherConditionLabel] setTextColor:[GcColorPickerUtils colorWithHex:customWeatherConditionColorValue]];
     }
 
 }
@@ -1378,7 +1378,7 @@ SBFLockScreenDateView* timeDateView = nil;
             else if ([faceIDLockColorValue intValue] == 2)
                 [faceIDLock setContentColor:secondaryWallpaperColor];
             else if ([faceIDLockColorValue intValue] == 3)
-                [faceIDLock setContentColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customFaceIDLockColor"] withFallback:@"#FFFFFF"]];
+                [faceIDLock setContentColor:[GcColorPickerUtils colorWithHex:customFaceIDLockColorValue]];
 
             if (showUpNextSwitch) {
                 if ([upNextColorValue intValue] == 0)
@@ -1388,7 +1388,7 @@ SBFLockScreenDateView* timeDateView = nil;
                 else if ([upNextColorValue intValue] == 2)
                     [[timeDateView upNextLabel] setTextColor:secondaryWallpaperColor];
                 else if ([upNextColorValue intValue] == 3)
-                    [[timeDateView upNextLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customUpNextColor"] withFallback:@"#FFFFFF"]];
+                    [[timeDateView upNextLabel] setTextColor:[GcColorPickerUtils colorWithHex:customUpNextColorValue]];
 
                 if ([upNextEventColorValue intValue] == 0)
                     [[timeDateView upNextEventLabel] setTextColor:backgroundWallpaperColor];
@@ -1397,7 +1397,7 @@ SBFLockScreenDateView* timeDateView = nil;
                 else if ([upNextEventColorValue intValue] == 2)
                     [[timeDateView upNextEventLabel] setTextColor:secondaryWallpaperColor];
                 else if ([upNextEventColorValue intValue] == 3)
-                    [[timeDateView upNextEventLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customUpNextEventColor"] withFallback:@"#FFFFFF"]];
+                    [[timeDateView upNextEventLabel] setTextColor:[GcColorPickerUtils colorWithHex:customUpNextEventColorValue]];
             }
 
             if ([timeColorValue intValue] == 0)
@@ -1407,7 +1407,7 @@ SBFLockScreenDateView* timeDateView = nil;
             else if ([timeColorValue intValue] == 2)
                 [[timeDateView timeLabel] setTextColor:secondaryWallpaperColor];
             else if ([timeColorValue intValue] == 3)
-                [[timeDateView timeLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customTimeColor"] withFallback:@"#FFFFFF"]];
+                [[timeDateView timeLabel] setTextColor:[GcColorPickerUtils colorWithHex:customTimeColorValue]];
 
             if ([dateColorValue intValue] == 0)
                 [[timeDateView dateLabel] setTextColor:backgroundWallpaperColor];
@@ -1416,7 +1416,7 @@ SBFLockScreenDateView* timeDateView = nil;
             else if ([dateColorValue intValue] == 2)
                 [[timeDateView dateLabel] setTextColor:secondaryWallpaperColor];
             else if ([dateColorValue intValue] == 3)
-                [[timeDateView dateLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customDateColor"] withFallback:@"#FFFFFF"]];
+                [[timeDateView dateLabel] setTextColor:[GcColorPickerUtils colorWithHex:customDateColorValue]];
 
             if (showWeatherSwitch) {
                 if ([weatherReportColorValue intValue] == 0)
@@ -1426,7 +1426,7 @@ SBFLockScreenDateView* timeDateView = nil;
                 else if ([weatherReportColorValue intValue] == 2)
                     [[timeDateView weatherReportLabel] setTextColor:secondaryWallpaperColor];
                 else if ([weatherReportColorValue intValue] == 3)
-                    [[timeDateView weatherReportLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customWeatherReportColor"] withFallback:@"#FFFFFF"]];
+                    [[timeDateView weatherReportLabel] setTextColor:[GcColorPickerUtils colorWithHex:customWeatherReportColorValue]];
 
                 if ([weatherConditionColorValue intValue] == 0)
                     [[timeDateView weatherConditionLabel] setTextColor:backgroundWallpaperColor];
@@ -1435,7 +1435,7 @@ SBFLockScreenDateView* timeDateView = nil;
                 else if ([weatherConditionColorValue intValue] == 2)
                     [[timeDateView weatherConditionLabel] setTextColor:secondaryWallpaperColor];
                 else if ([weatherConditionColorValue intValue] == 3)
-                    [[timeDateView weatherConditionLabel] setTextColor:[SparkColourPickerUtils colourWithString:[preferencesColorDictionary objectForKey:@"customWeatherConditionColor"] withFallback:@"#FFFFFF"]];
+                    [[timeDateView weatherConditionLabel] setTextColor:[GcColorPickerUtils colorWithHex:customWeatherConditionColorValue]];
             }
         }
   	});
@@ -1494,12 +1494,19 @@ SBFLockScreenDateView* timeDateView = nil;
 
     // colors
     [preferences registerObject:&faceIDLockColorValue default:@"3" forKey:@"faceIDLockColor"];
+    [preferences registerObject:&customFaceIDLockColorValue default:@"FFFFFF" forKey:@"customFaceIDLockColor"];
     [preferences registerObject:&upNextColorValue default:@"3" forKey:@"upNextColor"];
+    [preferences registerObject:&customUpNextColorValue default:@"FFFFFF" forKey:@"customUpNextColor"];
     [preferences registerObject:&upNextEventColorValue default:@"1" forKey:@"upNextEventColor"];
+    [preferences registerObject:&customUpNextEventColorValue default:@"FFFFFF" forKey:@"customUpNextEventColor"];
     [preferences registerObject:&timeColorValue default:@"3" forKey:@"timeColor"];
+    [preferences registerObject:&customTimeColorValue default:@"FFFFFF" forKey:@"customTimeColor"];
     [preferences registerObject:&dateColorValue default:@"3" forKey:@"dateColor"];
+    [preferences registerObject:&customDateColorValue default:@"FFFFFF" forKey:@"customDateColor"];
     [preferences registerObject:&weatherReportColorValue default:@"1" forKey:@"weatherReportColor"];
+    [preferences registerObject:&customWeatherReportColorValue default:@"FFFFFF" forKey:@"customWeatherReportColor"];
     [preferences registerObject:&weatherConditionColorValue default:@"1" forKey:@"weatherConditionColor"];
+    [preferences registerObject:&customWeatherConditionColorValue default:@"FFFFFF" forKey:@"customWeatherConditionColor"];
     [preferences registerBool:&artworkBasedColorsSwitch default:YES forKey:@"artworkBasedColors"];
     [preferences registerObject:&faceIDLockArtworkColorValue default:@"0" forKey:@"faceIDLockArtworkColor"];
     [preferences registerObject:&upNextArtworkColorValue default:@"0" forKey:@"upNextArtworkColor"];

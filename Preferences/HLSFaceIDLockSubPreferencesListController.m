@@ -1,6 +1,6 @@
-#import "HLSContributorsSubPreferencesListController.h"
+#import "HLSFaceIDLockSubPreferencesListController.h"
 
-@implementation HLSContributorsSubPreferencesListController
+@implementation HLSFaceIDLockSubPreferencesListController
 
 - (void)viewDidLoad {
 

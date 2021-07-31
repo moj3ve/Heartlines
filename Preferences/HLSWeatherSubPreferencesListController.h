@@ -7,7 +7,7 @@
 @interface HLSAppearanceSettings : HBAppearanceSettings
 @end
 
-@interface HLSContributorsSubPreferencesListController : HBListController
+@interface HLSWeatherSubPreferencesListController : HBListController
 @property(nonatomic, retain)HLSAppearanceSettings* appearanceSettings;
 @property(nonatomic, retain)UILabel* titleLabel;
 @property(nonatomic, retain)UIBlurEffect* blur;

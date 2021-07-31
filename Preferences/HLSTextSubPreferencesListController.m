@@ -1,6 +1,6 @@
-#import "HLSContributorsSubPreferencesListController.h"
+#import "HLSTextSubPreferencesListController.h"
 
-@implementation HLSContributorsSubPreferencesListController
+@implementation HLSTextSubPreferencesListController
 
 - (void)viewDidLoad {
 

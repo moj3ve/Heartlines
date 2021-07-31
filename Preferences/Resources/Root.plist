@@ -146,7 +146,7 @@
  			<key>label</key>
  			<string>Miscellaneous</string>
  			<key>detail</key>
- 			<string>HLSMiscellaneousPreferencesListController</string>
+ 			<string>HLSMiscellaneousSubPreferencesListController</string>
  			<key>HLSSub</key>
  			<string>sub/miscellaneous</string>
  		</dict>

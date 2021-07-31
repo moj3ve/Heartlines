@@ -43,20 +43,17 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
-			<string>SparkColourPickerCell</string>
-			<key>libsparkcolourpicker</key>
-			<dict>
-				<key>defaults</key>
-				<string>love.litten.heartlines.colorspreferences</string>
-				<key>fallback</key>
-				<string>#FFFFFF</string>
-				<key>alpha</key>
-				<false/>
-			</dict>
+			<string>GcColorPickerCell</string>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color:</string>
+			<key>defaults</key>
+			<string>love.litten.heartlines.colorspreferences</string>
 			<key>key</key>
 			<string>customFaceIDLockColor</string>
+			<key>supportsAlpha</key>
+			<true/>
+			<key>fallback</key>
+			<string>FFFFFF</string>
 		</dict>
 		
 		<dict>
@@ -97,20 +94,17 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
-			<string>SparkColourPickerCell</string>
-			<key>libsparkcolourpicker</key>
-			<dict>
-				<key>defaults</key>
-				<string>love.litten.heartlines.colorspreferences</string>
-				<key>fallback</key>
-				<string>#FFFFFF</string>
-				<key>alpha</key>
-				<false/>
-			</dict>
+			<string>GcColorPickerCell</string>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color:</string>
+			<key>defaults</key>
+			<string>love.litten.heartlines.colorspreferences</string>
 			<key>key</key>
 			<string>customUpNextColor</string>
+			<key>supportsAlpha</key>
+			<true/>
+			<key>fallback</key>
+			<string>FFFFFF</string>
 		</dict>
 
 		<dict>
@@ -151,20 +145,17 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
-			<string>SparkColourPickerCell</string>
-			<key>libsparkcolourpicker</key>
-			<dict>
-				<key>defaults</key>
-				<string>love.litten.heartlines.colorspreferences</string>
-				<key>fallback</key>
-				<string>#FFFFFF</string>
-				<key>alpha</key>
-				<false/>
-			</dict>
+			<string>GcColorPickerCell</string>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color:</string>
+			<key>defaults</key>
+			<string>love.litten.heartlines.colorspreferences</string>
 			<key>key</key>
 			<string>customUpNextEventColor</string>
+			<key>supportsAlpha</key>
+			<true/>
+			<key>fallback</key>
+			<string>FFFFFF</string>
 		</dict>
 
 		<dict>
@@ -205,20 +196,17 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
-			<string>SparkColourPickerCell</string>
-			<key>libsparkcolourpicker</key>
-			<dict>
-				<key>defaults</key>
-				<string>love.litten.heartlines.colorspreferences</string>
-				<key>fallback</key>
-				<string>#FFFFFF</string>
-				<key>alpha</key>
-				<false/>
-			</dict>
+			<string>GcColorPickerCell</string>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color:</string>
+			<key>defaults</key>
+			<string>love.litten.heartlines.colorspreferences</string>
 			<key>key</key>
 			<string>customTimeColor</string>
+			<key>supportsAlpha</key>
+			<true/>
+			<key>fallback</key>
+			<string>FFFFFF</string>
 		</dict>
 		
 		<dict>
@@ -259,20 +247,17 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
-			<string>SparkColourPickerCell</string>
-			<key>libsparkcolourpicker</key>
-			<dict>
-				<key>defaults</key>
-				<string>love.litten.heartlines.colorspreferences</string>
-				<key>fallback</key>
-				<string>#FFFFFF</string>
-				<key>alpha</key>
-				<false/>
-			</dict>
+			<string>GcColorPickerCell</string>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color:</string>
+			<key>defaults</key>
+			<string>love.litten.heartlines.colorspreferences</string>
 			<key>key</key>
 			<string>customDateColor</string>
+			<key>supportsAlpha</key>
+			<true/>
+			<key>fallback</key>
+			<string>FFFFFF</string>
 		</dict>
 
 		<dict>
@@ -313,20 +298,17 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
-			<string>SparkColourPickerCell</string>
-			<key>libsparkcolourpicker</key>
-			<dict>
-				<key>defaults</key>
-				<string>love.litten.heartlines.colorspreferences</string>
-				<key>fallback</key>
-				<string>#FFFFFF</string>
-				<key>alpha</key>
-				<false/>
-			</dict>
+			<string>GcColorPickerCell</string>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color:</string>
+			<key>defaults</key>
+			<string>love.litten.heartlines.colorspreferences</string>
 			<key>key</key>
 			<string>customWeatherReportColor</string>
+			<key>supportsAlpha</key>
+			<true/>
+			<key>fallback</key>
+			<string>FFFFFF</string>
 		</dict>
 
 		<dict>
@@ -367,20 +349,17 @@
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
-			<string>SparkColourPickerCell</string>
-			<key>libsparkcolourpicker</key>
-			<dict>
-				<key>defaults</key>
-				<string>love.litten.heartlines.colorspreferences</string>
-				<key>fallback</key>
-				<string>#FFFFFF</string>
-				<key>alpha</key>
-				<false/>
-			</dict>
+			<string>GcColorPickerCell</string>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color:</string>
+			<key>defaults</key>
+			<string>love.litten.heartlines.colorspreferences</string>
 			<key>key</key>
-			<string>customWeatherConditionColor</string>
+			<string>customWeatherReportColor</string>
+			<key>supportsAlpha</key>
+			<true/>
+			<key>fallback</key>
+			<string>FFFFFF</string>
 		</dict>
 
 		<dict>

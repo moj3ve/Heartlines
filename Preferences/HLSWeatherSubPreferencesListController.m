@@ -1,6 +1,6 @@
-#import "HLSContributorsSubPreferencesListController.h"
+#import "HLSWeatherSubPreferencesListController.h"
 
-@implementation HLSContributorsSubPreferencesListController
+@implementation HLSWeatherSubPreferencesListController
 
 - (void)viewDidLoad {
 

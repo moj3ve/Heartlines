@@ -58,12 +58,19 @@ NSString* customWeatherConditionFontSizeValue = @"14.0";
 
 // colors
 NSString* faceIDLockColorValue = @"3";
+NSString* customFaceIDLockColorValue = @"FFFFFF";
 NSString* upNextColorValue = @"3";
+NSString* customUpNextColorValue = @"FFFFFF";
 NSString* upNextEventColorValue = @"1";
+NSString* customUpNextEventColorValue = @"FFFFFF";
 NSString* timeColorValue = @"3";
+NSString* customTimeColorValue = @"FFFFFF";
 NSString* dateColorValue = @"3";
+NSString* customDateColorValue = @"FFFFFF";
 NSString* weatherReportColorValue = @"1";
+NSString* customWeatherReportColorValue = @"FFFFFF";
 NSString* weatherConditionColorValue = @"1";
+NSString* customWeatherConditionColorValue = @"FFFFFF";
 BOOL artworkBasedColorsSwitch = YES;
 NSString* faceIDLockArtworkColorValue = @"0";
 NSString* upNextArtworkColorValue = @"0";
