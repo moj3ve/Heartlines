@@ -47,7 +47,7 @@
 			<key>label</key>
 			<string>Custom color:</string>
 			<key>defaults</key>
-			<string>love.litten.heartlines.colorspreferences</string>
+			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
 			<string>customFaceIDLockColor</string>
 			<key>supportsAlpha</key>
@@ -98,7 +98,7 @@
 			<key>label</key>
 			<string>Custom color:</string>
 			<key>defaults</key>
-			<string>love.litten.heartlines.colorspreferences</string>
+			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
 			<string>customUpNextColor</string>
 			<key>supportsAlpha</key>
@@ -149,7 +149,7 @@
 			<key>label</key>
 			<string>Custom color:</string>
 			<key>defaults</key>
-			<string>love.litten.heartlines.colorspreferences</string>
+			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
 			<string>customUpNextEventColor</string>
 			<key>supportsAlpha</key>
@@ -200,7 +200,7 @@
 			<key>label</key>
 			<string>Custom color:</string>
 			<key>defaults</key>
-			<string>love.litten.heartlines.colorspreferences</string>
+			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
 			<string>customTimeColor</string>
 			<key>supportsAlpha</key>
@@ -251,7 +251,7 @@
 			<key>label</key>
 			<string>Custom color:</string>
 			<key>defaults</key>
-			<string>love.litten.heartlines.colorspreferences</string>
+			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
 			<string>customDateColor</string>
 			<key>supportsAlpha</key>
@@ -302,7 +302,7 @@
 			<key>label</key>
 			<string>Custom color:</string>
 			<key>defaults</key>
-			<string>love.litten.heartlines.colorspreferences</string>
+			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
 			<string>customWeatherReportColor</string>
 			<key>supportsAlpha</key>
@@ -353,7 +353,7 @@
 			<key>label</key>
 			<string>Custom color:</string>
 			<key>defaults</key>
-			<string>love.litten.heartlines.colorspreferences</string>
+			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
 			<string>customWeatherReportColor</string>
 			<key>supportsAlpha</key>
