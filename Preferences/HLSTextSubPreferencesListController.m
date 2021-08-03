@@ -8,6 +8,10 @@
 
     self.appearanceSettings = [HLSAppearanceSettings new];
     self.hb_appearanceSettings = [self appearanceSettings];
+    
+
+    self.preferences = [[HBPreferences alloc] initWithIdentifier: @"love.litten.heartlinespreferences"];
+
 
     self.blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
     self.blurView = [[UIVisualEffectView alloc] initWithEffect:[self blur]];
@@ -57,6 +61,23 @@
 
     return false;
 
+}
+
+- (void)showFontPicker {
+    
+    UIFontPickerViewController* fontPicker = [UIFontPickerViewController new];
+    fontPicker.delegate = self;
+    [self presentViewController:fontPicker animated:YES completion:nil];
+    
+}
+
+- (void)fontPickerViewControllerDidPickFont:(UIFontPickerViewController *)viewController {
+    
+    UIFontDescriptor* descriptor = [viewController selectedFontDescriptor];
+    UIFont* font = [UIFont fontWithDescriptor:descriptor size:17];
+
+    [[self preferences] setObject:[font familyName] forKey:@"customFont"];
+    
 }
 
 @end
