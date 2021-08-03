@@ -65,9 +65,9 @@
 
 - (void)showFontPicker {
     
-    UIFontPickerViewController* fontPicker = [UIFontPickerViewController new];
-    fontPicker.delegate = self;
-    [self presentViewController:fontPicker animated:YES completion:nil];
+    self.fontPicker = [UIFontPickerViewController new];
+    [[self fontPicker] setDelegate:self];
+    [self presentViewController:[self fontPicker] animated:YES completion:nil];
     
 }
 
