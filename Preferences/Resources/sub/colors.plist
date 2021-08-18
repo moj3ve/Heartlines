@@ -355,7 +355,7 @@
 			<key>defaults</key>
 			<string>love.litten.heartlinespreferences</string>
 			<key>key</key>
-			<string>customWeatherReportColor</string>
+			<string>customWeatherConditionColor</string>
 			<key>supportsAlpha</key>
 			<true/>
 			<key>fallback</key>
