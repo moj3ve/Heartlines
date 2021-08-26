@@ -28,25 +28,6 @@
             <key>cell</key>
             <string>PSGroupCell</string>
             <key>label</key>
-            <string>Code to lower notifications</string>
-        </dict>
-        <dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>label</key>
-            <string>@s1ris</string>
-            <key>cellClass</key>
-            <string>HBTwitterCell</string>
-            <key>label</key>
-            <string>Andy</string>
-            <key>user</key>
-            <string>s1ris</string>
-        </dict>
-
-        <dict>
-            <key>cell</key>
-            <string>PSGroupCell</string>
-            <key>label</key>
             <string>Getting the next alarm</string>
         </dict>
         <dict>
